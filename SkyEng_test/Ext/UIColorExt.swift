@@ -12,3 +12,5 @@ extension UIColor {
     static let lightRed = UIColor(red: 247/255, green: 66/255, blue: 82/255, alpha: 1)
     
 }
+
+

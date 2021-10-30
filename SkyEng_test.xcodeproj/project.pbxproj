@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8A3CCAF62710D54A00AD64B0 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3CCAF52710D54A00AD64B0 /* UIColorExt.swift */; };
+		8A3CCAFC2712E92F00AD64B0 /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3CCAFB2712E92F00AD64B0 /* Words.swift */; };
+		8A3CCAFF2712F0F400AD64B0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3CCAFE2712F0F400AD64B0 /* NetworkManager.swift */; };
 		8A5D4849270E386B0043C9B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D4848270E386B0043C9B8 /* AppDelegate.swift */; };
 		8A5D484B270E386B0043C9B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D484A270E386B0043C9B8 /* SceneDelegate.swift */; };
 		8A5D484D270E386B0043C9B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D484C270E386B0043C9B8 /* ViewController.swift */; };
@@ -15,10 +17,13 @@
 		8A5D4853270E386B0043C9B8 /* SkyEng_test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D4851270E386B0043C9B8 /* SkyEng_test.xcdatamodeld */; };
 		8A5D4855270E386E0043C9B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A5D4854270E386E0043C9B8 /* Assets.xcassets */; };
 		8A5D4858270E386E0043C9B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A5D4856270E386E0043C9B8 /* LaunchScreen.storyboard */; };
+		8A7E8A26271C482400512A93 /* NetworkManager01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E8A25271C482400512A93 /* NetworkManager01.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8A3CCAF52710D54A00AD64B0 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
+		8A3CCAFB2712E92F00AD64B0 /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
+		8A3CCAFE2712F0F400AD64B0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		8A5D4845270E386B0043C9B8 /* SkyEng_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyEng_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A5D4848270E386B0043C9B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A5D484A270E386B0043C9B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +33,7 @@
 		8A5D4854270E386E0043C9B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A5D4857270E386E0043C9B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A5D4859270E386E0043C9B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A7E8A25271C482400512A93 /* NetworkManager01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager01.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +47,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A3CCAF72712E8AB00AD64B0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8A5D484C270E386B0043C9B8 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8A3CCAF82712E8C200AD64B0 /* Ext */ = {
+			isa = PBXGroup;
+			children = (
+				8A3CCAF52710D54A00AD64B0 /* UIColorExt.swift */,
+			);
+			path = Ext;
+			sourceTree = "<group>";
+		};
+		8A3CCAF92712E90200AD64B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8A3CCAFB2712E92F00AD64B0 /* Words.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8A3CCAFD2712F0DA00AD64B0 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				8A3CCAFE2712F0F400AD64B0 /* NetworkManager.swift */,
+				8A7E8A25271C482400512A93 /* NetworkManager01.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		8A3CCB0027134E8500AD64B0 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				8A5D4848270E386B0043C9B8 /* AppDelegate.swift */,
+				8A5D484A270E386B0043C9B8 /* SceneDelegate.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		8A5D483C270E386B0043C9B8 = {
 			isa = PBXGroup;
 			children = (
@@ -60,15 +108,16 @@
 		8A5D4847270E386B0043C9B8 /* SkyEng_test */ = {
 			isa = PBXGroup;
 			children = (
-				8A5D4848270E386B0043C9B8 /* AppDelegate.swift */,
-				8A5D484A270E386B0043C9B8 /* SceneDelegate.swift */,
-				8A5D484C270E386B0043C9B8 /* ViewController.swift */,
-				8A5D484E270E386B0043C9B8 /* Main.storyboard */,
+				8A3CCAFD2712F0DA00AD64B0 /* Manager */,
+				8A3CCAF92712E90200AD64B0 /* Model */,
+				8A3CCAF72712E8AB00AD64B0 /* View */,
+				8A3CCAF82712E8C200AD64B0 /* Ext */,
+				8A3CCB0027134E8500AD64B0 /* Support */,
 				8A5D4854270E386E0043C9B8 /* Assets.xcassets */,
+				8A5D4851270E386B0043C9B8 /* SkyEng_test.xcdatamodeld */,
+				8A5D484E270E386B0043C9B8 /* Main.storyboard */,
 				8A5D4856270E386E0043C9B8 /* LaunchScreen.storyboard */,
 				8A5D4859270E386E0043C9B8 /* Info.plist */,
-				8A5D4851270E386B0043C9B8 /* SkyEng_test.xcdatamodeld */,
-				8A3CCAF52710D54A00AD64B0 /* UIColorExt.swift */,
 			);
 			path = SkyEng_test;
 			sourceTree = "<group>";
@@ -144,10 +193,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A5D4853270E386B0043C9B8 /* SkyEng_test.xcdatamodeld in Sources */,
+				8A3CCAFC2712E92F00AD64B0 /* Words.swift in Sources */,
 				8A5D484D270E386B0043C9B8 /* ViewController.swift in Sources */,
+				8A3CCAFF2712F0F400AD64B0 /* NetworkManager.swift in Sources */,
 				8A5D4849270E386B0043C9B8 /* AppDelegate.swift in Sources */,
 				8A3CCAF62710D54A00AD64B0 /* UIColorExt.swift in Sources */,
 				8A5D484B270E386B0043C9B8 /* SceneDelegate.swift in Sources */,
+				8A7E8A26271C482400512A93 /* NetworkManager01.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
