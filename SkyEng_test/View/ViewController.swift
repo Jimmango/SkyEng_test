@@ -12,7 +12,7 @@ protocol ViewControllerDelegate: AnyObject {
 }
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate {
-    
+ 
     var delegate: ViewControllerDelegate?
     
     let wordsViewController = WordsViewController()
@@ -20,19 +20,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let searchController = UISearchController()
     let tableView = UITableView()
     
-    func updateSearchResults(for searchController: UISearchController) {
-//        guard let text = searchController.searchBar.text else {
-//            return
-//        }
-
-    }
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print("searchTaped")
         
         searchController.isActive = false
         searchController.searchBar.endEditing(true)
 
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        
     }
     
     var listOfWords = [Word]() {
@@ -43,10 +40,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         }
     }
-    
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,8 +98,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.deselectRow(at: indexPath, animated: true)
 
         let selecterWord = listOfWords[indexPath.row]
-        let controller = WordsViewController()
         delegate?.update(with: selecterWord.text)
+        
+        // !!!
+        wordsViewController.titleLabel.text = selecterWord.text
+        // !!!
         
         navigationController?.pushViewController(wordsViewController, animated: true)
     }
