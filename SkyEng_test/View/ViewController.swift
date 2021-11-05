@@ -7,12 +7,17 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchBarDelegate, UITextFieldDelegate, UISearchControllerDelegate {
+protocol ViewControllerDelegate: AnyObject {
+    func update(with text: String)
+}
 
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate {
+    
+    var delegate: ViewControllerDelegate?
+    
+    let wordsViewController = WordsViewController()
     let color = UIColor()
-    
     let searchController = UISearchController()
-    
     let tableView = UITableView()
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -24,6 +29,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print("searchTaped")
+        
         searchController.isActive = false
         searchController.searchBar.endEditing(true)
 
@@ -50,6 +56,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         view.addSubview(tableView)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+//        tableView.register(TableViewCell.self, forCellReuseIdentifier: TableViewCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -64,11 +71,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        
+//        let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.identifier, for: indexPath) as! TableViewCell
         let listInWithWords = listOfWords[indexPath.row]
         
-        cell.textLabel?.text = listInWithWords.text
+//        cell.configure(with: listInWithWords.text)
+//        cell.delegate = self
+        
+      cell.textLabel?.text = listInWithWords.text
 //      cell.textLabel?.text = "Cell \(indexPath.row + 1)"
         
         return cell
@@ -76,11 +85,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listOfWords.count
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        print("cell tapped")
     }
     
     
@@ -95,6 +99,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
             self.listOfWords = word
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+
+        let selecterWord = listOfWords[indexPath.row]
+        let controller = WordsViewController()
+        delegate?.update(with: selecterWord.text)
+        
+        navigationController?.pushViewController(wordsViewController, animated: true)
     }
     
     
@@ -126,5 +140,5 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         
     }
+    
 }
-
