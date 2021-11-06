@@ -98,7 +98,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.deselectRow(at: indexPath, animated: true)
 
         let selecterWord = listOfWords[indexPath.row]
-        delegate?.update(with: selecterWord.text)
+//        delegate?.update(with: selecterWord.text)
         
         // !!!
         wordsViewController.titleLabel.text = selecterWord.text
@@ -136,5 +136,4 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         
     }
-    
 }
